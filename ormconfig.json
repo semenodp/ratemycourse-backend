@@ -1,7 +1,7 @@
 {
    "type": "mongodb",
-   "database": "test",
-   "synchronize": true,
+   "database": "ratemycourse",
+   "synchronize": false,
    "logging": false,
    "entities": [
       "src/entity/**/*.ts"
