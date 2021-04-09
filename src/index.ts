@@ -22,7 +22,7 @@ createConnection().then(async connection => {
 
     app.use(errorHandler);
 
-    app.listen(3000);
+    app.listen(5000);
 
     // insert new users for test
     // await connection.manager.save(connection.manager.create(User, {
@@ -36,6 +36,6 @@ createConnection().then(async connection => {
     //     age: 24
     // }));
 
-    console.log("Express server has started on port 3000");
+    console.log("Express server has started on port 5000");
 
 }).catch(error => console.log(error));
