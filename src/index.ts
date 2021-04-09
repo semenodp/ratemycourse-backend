@@ -3,6 +3,7 @@ import {createConnection} from "typeorm";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as morgan from 'morgan';
+import * as cors from 'cors'
 
 import courses from './routes/courses.routes'
 import ratings from './routes/ratings.routes'
@@ -13,6 +14,7 @@ createConnection().then(async connection => {
 
     // create express app
     const app = express();
+    app.use(cors());
     app.use(bodyParser.json());
 
     app.use(morgan(':date[web] :method :url :status - :response-time ms'));
