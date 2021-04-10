@@ -15,6 +15,7 @@ export const addNewRating = async (req: Request, res: Response, next: NextFuncti
   newRating.difficulty = difficulty;
   newRating.takeAgain = takeAgain;
   newRating.professor = professor;
+  newRating.upvotes = 0;
 
   const existingCourse = await courseRepo.findOne(courseID);
 
@@ -28,4 +29,19 @@ export const addNewRating = async (req: Request, res: Response, next: NextFuncti
 
     res.json(newRating);
   }
+};
+
+export const upvoteRating = async (req: Request, res: Response, next: NextFunction) => {
+  const ratingRepo = getRepository(Rating);
+  const rating = await ratingRepo.findOne(req.params.ratingid);
+
+  if (rating.upvotes) {
+    rating.upvotes = rating.upvotes + 1; 
+  } else {
+    rating.upvotes = 1;
+  }
+  
+  await ratingRepo.save(rating);
+
+  res.json(rating);
 };

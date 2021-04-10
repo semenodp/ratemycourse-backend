@@ -13,6 +13,9 @@ export class Rating {
     @Column()
     difficulty: number;
 
+    @Column({ type: 'number', default: 0})
+    upvotes: number;
+
     @Column()
     takeAgain: boolean;
 

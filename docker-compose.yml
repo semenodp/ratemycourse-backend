@@ -1,9 +1,14 @@
-version: '3'
+version: '3.7'
+
 services:
-
-  mongodb:
-    image: "mongo:4.0.6"
-    container_name: "typeorm-mongodb"
+  ratemycourse_backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "27017:27017"
-
+      - 5000:5000
+    command: 'npm run dev'
+    volumes:
+      - ./src:/usr/app/src
+    stdin_open: true
+    restart: on-failure
