@@ -4,6 +4,7 @@
          "es5",
          "es6"
       ],
+      "skipLibCheck": true,
       "target": "es5",
       "module": "commonjs",
       "moduleResolution": "node",
@@ -11,5 +12,6 @@
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "sourceMap": true
-   }
+   },  
+   "exclude": ["./node_modules"]
 }
