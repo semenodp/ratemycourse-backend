@@ -2,10 +2,8 @@
    "name": "ratemycourse-backend",
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
-   "devDependencies": {
-      "@types/node": "^8.10.66"
-   },
    "dependencies": {
+      "@types/node": "^14.14.41",
       "body-parser": "^1.18.1",
       "cors": "^2.8.5",
       "express": "^4.15.4",
