@@ -13,7 +13,8 @@
       "experimentalDecorators": true,
       "sourceMap": true,
       "types": [
-         "reflect-metadata"
+         "reflect-metadata",
+         "node"
       ],
    },  
    "exclude": ["./node_modules"]
