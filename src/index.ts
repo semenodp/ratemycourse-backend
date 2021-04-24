@@ -10,6 +10,8 @@ import ratings from './routes/ratings.routes'
 
 import { errorHandler } from './utils'
 
+const PORT = process.env.PORT | 5000;
+
 createConnection().then(async connection => {
 
     // create express app
@@ -24,19 +26,7 @@ createConnection().then(async connection => {
 
     app.use(errorHandler);
 
-    app.listen(5000);
-
-    // insert new users for test
-    // await connection.manager.save(connection.manager.create(User, {
-    //     firstName: "Timber",
-    //     lastName: "Saw",
-    //     age: 27
-    // }));
-    // await connection.manager.save(connection.manager.create(User, {
-    //     firstName: "Phantom",
-    //     lastName: "Assassin",
-    //     age: 24
-    // }));
+    app.listen(PORT);
 
     console.log("Express server has started on port 5000");
 
