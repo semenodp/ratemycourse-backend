@@ -10,7 +10,7 @@ import ratings from './routes/ratings.routes'
 
 import { errorHandler } from './utils'
 
-const PORT = process.env.PORT | 5000;
+const PORT = process.env.PORT || 5000;
 
 createConnection().then(async connection => {
 
